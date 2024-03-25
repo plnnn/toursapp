@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="tour" type="tourType"/>
+  <xs:complexType name="hotelType">
+    <xs:sequence>
+      <xs:element name="name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Radisson Blu"/>
+            <xs:enumeration value="Riga Island"/>
+            <xs:enumeration value="Hestia Hotel Europa"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="address">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Vilnius, Konstitucijos pr. 20"/>
+            <xs:enumeration value="Riga, Kipsalas iela 2"/>
+            <xs:enumeration value="Tallinn, Paadi 5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:byte" name="stars"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sightType">
+    <xs:sequence>
+      <xs:element name="name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="The Gediminas' Tower"/>
+            <xs:enumeration value="Museum of Occupations and Freedom Fights"/>
+            <xs:enumeration value="Riga Dome Cathedral"/>
+            <xs:enumeration value="Freedom Monument"/>
+            <xs:enumeration value="Tallinn Old Town"/>
+            <xs:enumeration value="Tallinn TV Tower"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="duration">
+        <xs:simpleType>
+          <xs:restriction base="xs:byte">
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sightsType">
+    <xs:sequence>
+      <xs:element type="sightType" name="sight" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="visitType">
+    <xs:sequence>
+      <xs:element name="country">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Lithuania"/>
+            <xs:enumeration value="Latvia"/>
+            <xs:enumeration value="Estonia"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="city">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Vilnius"/>
+            <xs:enumeration value="Riga"/>
+            <xs:enumeration value="Tallinn"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:byte" name="duration"/>
+      <xs:element type="hotelType" name="hotel"/>
+      <xs:element type="sightsType" name="sights"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="visitsType">
+    <xs:sequence>
+      <xs:element type="visitType" name="visit" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="guideType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="firstName"/>
+      <xs:element type="xs:string" name="lastName"/>
+      <xs:element type="xs:byte" name="experience"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tourType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:byte" name="duration"/>
+      <xs:element type="visitsType" name="visits"/>
+      <xs:element type="guideType" name="guide"/>
+      <xs:element type="xs:short" name="price"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

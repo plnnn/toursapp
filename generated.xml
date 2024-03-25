@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tour>
+    <name>Baltic Journey</name>
+    <duration>6</duration>
+    <visits>
+        <visit>
+            <country>Lithuania</country>
+            <city>Vilnius</city>
+            <duration>2</duration>
+            <hotel>
+                <name>Radisson Blu</name>
+                <address>Vilnius, Konstitucijos pr. 20</address>
+                <stars>4</stars>
+            </hotel>
+            <sights>
+                <sight>
+                    <name>The Gediminas' Tower</name>
+                    <duration>3</duration>
+                </sight>
+                <sight>
+                    <name>Museum of Occupations and Freedom Fights</name>
+                    <duration>2</duration>
+                </sight>
+            </sights>
+        </visit>
+        <visit>
+            <country>Latvia</country>
+            <city>Riga</city>
+            <duration>2</duration>
+            <hotel>
+                <name>Riga Island</name>
+                <address>Riga, Kipsalas iela 2</address>
+                <stars>4</stars>
+            </hotel>
+            <sights>
+                <sight>
+                    <name>Riga Dome Cathedral</name>
+                    <duration>2</duration>
+                </sight>
+                <sight>
+                    <name>Freedom Monument</name>
+                    <duration>1</duration>
+                </sight>
+            </sights>
+        </visit>
+        <visit>
+            <country>Estonia</country>
+            <city>Tallinn</city>
+            <duration>2</duration>
+            <hotel>
+                <name>Hestia Hotel Europa</name>
+                <address>Tallinn, Paadi 5</address>
+                <stars>4</stars>
+            </hotel>
+            <sights>
+                <sight>
+                    <name>Tallinn Old Town</name>
+                    <duration>5</duration>
+                </sight>
+                <sight>
+                    <name>Tallinn TV Tower</name>
+                    <duration>2</duration>
+                </sight>
+            </sights>
+        </visit>
+    </visits>
+    <guide>
+        <firstName>Pavlo</firstName>
+        <lastName>Nychyporuk</lastName>
+        <experience>10</experience>
+    </guide>
+    <price>300</price>
+</tour>
